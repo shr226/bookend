@@ -20,7 +20,7 @@ const addFood = async (req, res) => {
 
     try {
         await food.save();
-        res.json({ success: true, message: "Food Added" });
+        res.json({ success: true, message: "Book Added" });
     } catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: "Error adding food item" });
@@ -63,13 +63,13 @@ const removeFood = async (req, res) => {
                     }
 
                     await foodModel.findByIdAndDelete(req.body.id);
-                    res.json({ success: true, message: "Food removed" });
+                    res.json({ success: true, message: "Book removed" });
                 });
             }
         });
     } catch (error) {
         console.log(error);
-        res.status(500).json({ success: false, message: "Error removing food item" });
+        res.status(500).json({ success: false, message: "Error removing book item" });
     }
 };
 
